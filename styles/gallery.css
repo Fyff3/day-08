@@ -239,10 +239,11 @@ a.site-name {
 		display: grid;
 		/*create three columns, 300px wide each  */
 		grid-template-columns: 18.75rem 18.75rem 18.75rem;
+		/* create 2 rows, 200px height each */
 		grid-template-rows: 12.5rem 12.5rem;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-columns: repeat (2, 18.75rem) 1fr;
-		grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr); */
+		grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr); 
 		grid-template-columns: repeat (4, 12.5rem);
 		grid-auto-rows: 12.5rem;
 		gap: 1rem;
