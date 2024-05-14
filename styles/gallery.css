@@ -98,14 +98,22 @@ a:active {
 
 	.site-wrapper {
 		display: grid;
-		grid-template-columns: 1fr minmax(auto, 53rem) minmax(auto, 22rem) 1fr;
+		grid-template-columns: 1fr minmax(auto, 22rem) minmax(auto, 53rem) 1fr;
 		grid-template-areas:
 			"header header header header"
 			". main sidebar ."
 			"footer footer footer footer";
 	}
 
-	.site-wrapper.sidebar-bottom {}
+	.site-wrapper.sidebar-left {
+		display: grid;
+		grid-template-columns: 1fr minmax(auto, 22rem) minmax(auto, 53rem) 1fr;
+		
+		grid-template-areas: 
+		"header header header header"
+		" sidebar sidebar main main "
+		"footer footer footer footer";
+	}
 
 	.site-header {
 		grid-area: header;
@@ -230,7 +238,8 @@ a.site-name {
 /* Main
 --------------------------------------------- */
 .site-main {
-	padding: 0 5rem;
+	/* padding: 0 5rem; */
+
 }
 
 @media (min-width: 68em) {
@@ -239,15 +248,25 @@ a.site-name {
 		display: grid;
 		/*create three columns, 300px wide each  */
 		grid-template-columns: 18.75rem 18.75rem 18.75rem;
+		/* grid-template-columns: repeat(4, 12.5rem); */
 		/* create 2 rows, 200px height each */
-		grid-template-rows: 12.5rem 12.5rem;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-columns: repeat (2, 18.75rem) 1fr;
-		grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr); 
+		/* set all row height based on the content in inside the grid items */
+		/* grid-template-rows: 12.5rem 12.5rem; */
+		/* create 3 columns of equal width to fill the grid container */
+		/* grid-template-columns: 1fr 1fr 1fr; */
+		/* create 3 columns, first 2 are 300px, the last one will fill the remaining space" */
+		/* create 3 columns, first 2 are 300px, the last one is min 300px and maximum the remaining space */
+		/* grid-template-columns: repeat (2, 18.75rem) 1fr;
+		 */
+		/* grid-template-columns: repeat(2, 18.75rem) minmax(18.75rem, 1fr); 
 		grid-template-columns: repeat (4, 12.5rem);
+		/* grid-auto-rows: 12.5rem; */
+		justify-content: center;
+		/* grid-template-rows: auto auto; */
 		grid-auto-rows: 12.5rem;
 		gap: 1rem;
-		justify-content: center;
+		align-items: stretch;
+		justify-items: stretch;
 
 	}
 
@@ -257,7 +276,7 @@ a.site-name {
 	}
 
 	.large-image {
-		//*grid-column: 2 / 4;*/
+		/* grid-column: 2 / 4; */
 		grid-column: span 2;
 	}
 
@@ -274,7 +293,6 @@ a.site-name {
 		grid-row: span 2;
 		order: -1;
 	}
-
 }
 
 
