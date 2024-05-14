@@ -238,7 +238,8 @@ a.site-name {
 	.photo-gallery {
 		display: grid;
 		/*create three columns, 300px wide each  */
-		grid-template-columns: 18.75rem 18.75rem 18.75rem;
+		/* grid-template-columns: 18.75rem 18.75rem 18.75rem; */
+		grid-template-columns: repeat(4, 12.5rem);
 		/* create 2 rows, 200px height each */
 		/* set all row height based on the content in inside the grid items */
 		/* grid-template-rows: 12.5rem 12.5rem; */
@@ -254,6 +255,7 @@ a.site-name {
 		gap: 1rem;
 		justify-content: center; */
 		grid-template-rows: auto auto;
+		/* grid-auto-rows: 12.5rem; */
 
 	}
 
@@ -280,7 +282,6 @@ a.site-name {
 		grid-row: span 2;
 		order: -1;
 	}
-
 }
 
 
